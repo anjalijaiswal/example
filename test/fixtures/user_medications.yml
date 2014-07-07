@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  dosage: MyString
+  name: MyString
+
+two:
+  dosage: MyString
+  name: MyString

@@ -1,0 +1,28 @@
+<h1>These are your Medications</h1>
+
+
+<br>
+<fieldset><center>
+	<table border="1">
+		<tr>
+     <th>Medication_Id</th>
+    <th>Medication</th>
+    <th>User_ID</th>
+
+    <th>Dosage</th>
+    <th></th>
+  </tr>
+<% @u.each do |u| %>
+<tr>
+<td><%= u.id %></td>
+<td><%= u.drug_id %></td>
+<td><%= u.user_id %></td>
+<td><%= u.dosage %></td>
+<td><%= button_to "Delete Med" ,{:controller =>"users_medication" ,:action=> "remove_my_med" , :user_medication=> u.id },:method => 'post' %></td></tr>
+<% end %>
+</table>
+<%= link_to 'Back', users_back_url %>
+<%= link_to 'Logout', users_path %><br>
+
+</center></fieldset>
+

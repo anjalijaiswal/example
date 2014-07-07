@@ -1,0 +1,26 @@
+<h3><%="These are all the Medications:" %></h3>
+<h3><p align="right"><%= link_to 'Back', users_back_url %> </p></h3>
+<div id="drug_list" >
+
+<table>
+  <tr>
+    <th>Drug_Id</th>
+    <th>Drug_Name_Long</th>
+    <th>Drug_Name_Short</th>
+    <th>Generic_Name</th>
+    <th>Add_To_My_Med</th>
+    <th>Dosage</th>
+  </tr>
+ 
+<% @drugs.each do |drug| %>
+  <tr>
+    <td><%= drug.id%></td>
+    <td><%= drug.drug_name_long %></td>
+    <td><%= drug.drug_name_short %></td>
+    <td><%=drug.generic_name %></td>
+    <td><%= button_to "Add To Med" ,{:controller => 'users_medication', :action=> "add_to_my_med" ,:drug_id=> drug.id},:method => 'post' %></td>
+    <td><%= text_field_tag :dosage , params[:dosage] %>
+  </tr>
+<% end %>
+
+</table>

@@ -1,0 +1,10 @@
+<h2>Welcome <%= @current_user.name %></h2>
+It's <%= Time.now %>
+<h3> What would you like to do? </h3>
+<fieldset><center>
+<%= link_to 'My Medications', users_medication_mymed_path %></br>
+<%= link_to 'View all the Drugs', drugs_index_path %></br>
+<%#= link_to 'Messages', messages_path %>
+<br>
+<%= button_to "Logout" , {:controller =>"users" ,:action=> "logout" },:method => 'post' %>
+</center></fieldset>
