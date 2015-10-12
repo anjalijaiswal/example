@@ -1,2 +1,2 @@
-Pillphone_complete
+An example app for medication_reminders!
 ==================
